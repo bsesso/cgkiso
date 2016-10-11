@@ -40,7 +40,7 @@ int main (int argc, char *argv[]) {
 	glutCreateWindow(argv[0]);      // ウィンドウを作成
 	glutDisplayFunc(display);       // 表示関数を指定
 
-	// glutTimerFunc(100 , timer , 0); // 100ミリ秒後に実行する関数の指定
+	glutTimerFunc(100 , timer , 0); // 100ミリ秒後に実行する関数の指定
 
 	rotateAngle = 0;                // 変数の初期値の設定
 
