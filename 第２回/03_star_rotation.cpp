@@ -30,21 +30,21 @@ void display(void) {
 	glCallList(ID_DRAW_STAR);
 	glPopMatrix();
 
-	glPushMatrix();
-	glColor3d(0.0, 1.0, 0.0);
-	glRotated(rotateAngle, 0, 0, 1);
-	glTranslated(0, 0.5, 0);
-	glRotated(rotateAngle, 0, 0, 1);
-	glCallList(ID_DRAW_STAR);
-	glPopMatrix();
+	// glPushMatrix();
+	// glColor3d(0.0, 1.0, 0.0);
+	// glRotated(rotateAngle, 0, 0, 1);
+	// glTranslated(0, 0.5, 0);
+	// glRotated(rotateAngle, 0, 0, 1);
+	// glCallList(ID_DRAW_STAR);
+	// glPopMatrix();
 
-	glPushMatrix();
-	glColor3d(0.0, 0.0, 1.0);
-	glRotated(rotateAngle, 0, 0, 1);
-	glTranslated(-0.5, 0, 0);
-	glRotated(rotateAngle, 0, 0, 1);
-	glCallList(ID_DRAW_STAR);
-	glPopMatrix();
+	// glPushMatrix();
+	// glColor3d(0.0, 0.0, 1.0);
+	// glRotated(rotateAngle, 0, 0, 1);
+	// glTranslated(-0.5, 0, 0);
+	// glRotated(rotateAngle, 0, 0, 1);
+	// glCallList(ID_DRAW_STAR);
+	// glPopMatrix();
 
 	glutSwapBuffers(); // バッファの入れ替え
 }
@@ -56,7 +56,7 @@ void timer(int value) {
 	rotateAngle++; // 回転角度の更新
 
 	glutPostRedisplay(); // 再描画命令
-	glutTimerFunc(100 , timer , 0); // 100ミリ秒後に自身を実行する
+	glutTimerFunc(10, timer , 0); // 100ミリ秒後に自身を実行する
 }
 
 // ディスプレイリストを作成する
@@ -87,7 +87,7 @@ int main (int argc, char *argv[]) {
 	glutCreateWindow(argv[0]);      // ウィンドウを作成
 	glutDisplayFunc(display);       // 表示関数を指定
 
-	glutTimerFunc(100 , timer , 0); // 100ミリ秒後に実行する関数の指定
+	glutTimerFunc(10, timer , 0); // 100ミリ秒後に実行する関数の指定
 
 	buildDisplayList();
 	

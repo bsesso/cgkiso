@@ -4,6 +4,7 @@
 #include <ctime>
 
 using namespace std;
+
 int second = 0;
 int minute = 0;
 int hour = 0;

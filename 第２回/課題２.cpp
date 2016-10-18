@@ -23,20 +23,10 @@ void display(void) {
 	glLoadIdentity();
 
 	glPushMatrix();
-	glRotated(rotateAngle, 0, 0, 1);
-	glTranslated(0.5, 0, 0);
-	glRotated(rotateAngle, 0, 0, 1);
-
-	glPushMatrix();
-	glColor3d(0, 0, 0);
-	glRotated(rotateAngle * 5, 0, 0, 1);
-	glTranslated(0.5, 0, 0);
-	glScaled(0.3, 0.3, 0);
-	glRotated(rotateAngle * 10, 0, 0, 1);
-	glCallList(ID_DRAW_STAR);
-	glPopMatrix();
-
 	glColor3d(1.0, 0.0, 0.0);
+	glRotated(rotateAngle, 0, 0, 1);
+	glTranslated(0.5, 0, 0);
+	glRotated(rotateAngle, 0, 0, 1);
 	glCallList(ID_DRAW_STAR);
 	glPopMatrix();
 
@@ -66,7 +56,7 @@ void timer(int value) {
 	rotateAngle++; // 回転角度の更新
 
 	glutPostRedisplay(); // 再描画命令
-	glutTimerFunc(100 , timer , 0); // 100ミリ秒後に自身を実行する
+	glutTimerFunc(10, timer , 0); // 100ミリ秒後に自身を実行する
 }
 
 // ディスプレイリストを作成する
